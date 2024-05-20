@@ -218,10 +218,6 @@
     }
 
     work() {
-        if (this.ants.length === 0) {
-            return "No ants here. Did you work them to death?";
-        }
-
         // Store the initial count of ants
         const initialCount = this.ants.length;
 
@@ -234,7 +230,7 @@
         this.ants = this.ants.filter(ant => ant.health > 0);
 
         // Check if all ants are dead after filtering
-        if (this.ants.length === 0) {
+        if (initialCount === 0) {
             return "No ants here. Did you work them to death?";
         }
 
